@@ -1,0 +1,132 @@
+/* === GLOBAL RESETS & BASE STYLES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --accent: #00c896;
+  --hover: #1e1e1e;
+  --border: #333;
+  --copy: #888;
+  --highlight: #2d2d2d;
+  --font: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  padding: 2rem;
+}
+
+/* === ENTITY CONTAINER === */
+.entity-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.entity-card {
+  background: var(--highlight);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.entity-card:hover {
+  background: var(--hover);
+}
+
+.entity-name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.entity-preview {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.entity-svg svg {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+.copy-btn {
+  background: transparent;
+  border: 1px solid var(--copy);
+  color: var(--copy);
+  padding: 0.2rem 0.6rem;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.copy-btn:hover {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+}
+
+/* === LIVE PREVIEW PANEL === */
+#preview {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: #0e0e0e;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1.2rem;
+  min-height: 150px;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+/* === HEADER / TITLE === */
+h1 {
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* === INPUT SEARCH BAR === */
+#search {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #1b1b1b;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 600px) {
+  .entity-list {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .entity-preview {
+    font-size: 1.3rem;
+  }
+
+  .copy-btn {
+    font-size: 0.75rem;
+  }
+  }
