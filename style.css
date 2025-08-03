@@ -4,11 +4,19 @@
   padding: 0;
   box-sizing: border-box;
 }
+.icon {
+  width: 1.4em;
+  height: 1.4em;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
 .icon-png {
-  width: 1.2em;
-  height: 1.2em;
+  width: 1.4em;
+  height: 1.4em;
   vertical-align: middle;
 }
+
 :root {
   --bg: #121212;
   --text: #f0f0f0;
