@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Custom HTML Entities</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module">
+    import { parseCustomEntities } from './parser.js';
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("input");
+      const preview = document.getElementById("preview");
+
+      input.addEventListener("input", () => {
+        const rawText = input.value;
+        preview.innerHTML = parseCustomEntities(rawText);
+      });
+    });
+  </script>
+</head>
+<body>
+  <main>
+    <h2>Custom HTML Entity Tester</h2>
+    <textarea id="input" placeholder="Try &cedis;200 and &cloud;"></textarea>
+    <div id="preview" class="preview"></div>
+  </main>
+</body>
+</html>
